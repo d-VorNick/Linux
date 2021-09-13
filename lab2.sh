@@ -46,3 +46,39 @@ mke2fs -t ext4 -J device=/dev/sda4 /dev/sda3
 ##НЕ ЗАБЫТЬ ИЗМЕНИТЬ UUID В /etc/fstab
 reboot
 ##ДЛЯ ПРОВЕРКИ tune2fs -l /dev/sda3 | grep features
+
+#13
+## удалить из файла /etc/fstab добавленную нами строку
+umount /dev/sda3
+umount /dev/sda4
+fdisk /dev/sda
+d
+3
+d
+4
+n
+e
+3
+default
++500M
+n
+l
+5
+default
++100M
+n
+l
+6
+default
++100M
+
+reboot
+#14
+pvcreate /dev/sda3 /dev/sda4
+vgcreate vg01 /dev/sda3 /dev/sda4
+lvcreate -L190 -n lv01 vg01
+mkfs.ext4 /dev/vg01/lv01
+mkdir /mnt/supernewdisk
+mount /dev/vg01/lv01 /mnt/supernewdisk
+
+#15
