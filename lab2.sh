@@ -82,3 +82,13 @@ mkdir /mnt/supernewdisk
 mount /dev/vg01/lv01 /mnt/supernewdisk
 
 #15
+#создаем на хостовой машине папку lab2, открываем сетевой доступ к ней для всех пользователей
+#Ip получаем командой ipconfig. Нужный нам ip находится в блоке Адаптер Ethernet Ethernet:
+mkdir /mnt/share
+sudo yum install cifs-utils
+mount.cifs \\\\Ip\\lab2 /mnt/share -o user=vnikita2000@gmail.com password=********
+
+#16
+nano /etc/fstab
+\\\\192.168.0.106\\lab2 /mnt/share cifs user=vnikita2000@gmail.com, password=Kbpf2006, rw, iocharset=utf8 0 0
+
