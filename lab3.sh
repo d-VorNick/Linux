@@ -54,7 +54,19 @@ chmod -R o-rwx /home/test13
 
 #15
 mkdir /home/test14
-chgrp -R u1 /home/test14
 chmod +t /home/test14
-chmod -R o-rwx /home/test14
+chown u1:u1 /home/test14
+chmod -R o+w /home/test14
+
+#16
+cp /bin/nano /home/test14/nano
+chown u1:u1 /home/test14/nano
+chmod u+s /home/test14/nano
+
+#17
+mkdir /home/test15
+echo "SECRET SECRET SECRET" > /home/test15/.secret_file
+chmod a+x /home/test15
+chmod a-x /home/test15
+chmod a+r /home/test15/.secret_file
 
