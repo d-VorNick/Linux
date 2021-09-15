@@ -66,7 +66,7 @@ chmod u+s /home/test14/nano
 #17
 mkdir /home/test15
 echo "SECRET SECRET SECRET" > /home/test15/.secret_file
-chmod a+x /home/test15
-chmod a-x /home/test15
+chmod a-r /home/test15
 chmod a+r /home/test15/.secret_file
+
 
