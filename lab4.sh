@@ -16,3 +16,9 @@ chgrp games /var/games/bastet.scores2
 chmod 664 /var/games/bastet.scores2
 
 #3
+yum list installed > lab4/task3.log
+
+#4
+yum deplist gcc > lab4/task4_1.log
+yum provides libgcc > lab4/task4_2.log
+
