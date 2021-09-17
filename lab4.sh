@@ -54,4 +54,12 @@ rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.
 dnf install perl
 perl Makefile.PL; make; make install
 alien --to-rpm --scripts fortunes-ru_1.52-2_all.deb
+dnf install rpmrebuild
+rpmrebuild -pe fortunes-ru-1.52-3.noarch.rpm
+# прокрутите вниз до раздела %files и удалите строки (dd) для любых каталогов-нарушителей (в моем случае каталог " / "), сохраните(:w) и завершите работу (:q),
+# нажмите "y" и отметьте местоположение результата. В моем случае оно было /root/rpmbuild/RPMS/noarch/fortunes-ru-1.52-3.noarch.rpm
+yum install /root/rpmbuild/RPMS/noarch/fortunes-ru-1.52-3.noarch.rpm
+
+#9
+
 
