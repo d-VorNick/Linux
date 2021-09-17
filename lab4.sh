@@ -33,3 +33,11 @@ nano /etc/yum.repos.d/localrepo.repo
   enabled=1
   gpgcheck=0
 
+#6
+yum repolist all > lab4/task6.log
+
+#7
+rename .repo .nerepo *
+rename localrepo.nerepo localrepo.repo *
+
+
