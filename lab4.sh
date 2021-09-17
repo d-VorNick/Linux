@@ -24,6 +24,7 @@ yum provides libgcc > lab4/task4_2.log
 
 #5
 mkdir -p $HOME/localrepo
+C:\Users\vniki\Downloads\checkinstall-1.6.2-3.el6.1.x86_64.rpm  root@192.168.0.110:/root/localrepo
 yum install createrepo yum-utils
 createrepo -v $HOME/localrepo
 nano /etc/yum.repos.d/localrepo.repo
@@ -39,5 +40,18 @@ yum repolist all > lab4/task6.log
 #7
 rename .repo .nerepo *
 rename localrepo.nerepo localrepo.repo *
+yum list available
+yum install $HOME/localrepo/checkinstall-1.6.2-3.el6.1.x86_64.rpm
 
+#8
+C:\Users\vniki\Downloads\alien_8.95.tar.xz  root@192.168.0.110:/root/alien
+sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+sudo rpm -ql epel-release
+sudo dnf repolist -v
+sudo dnf repository-packages epel list
+rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
+rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+dnf install perl
+perl Makefile.PL; make; make install
+alien --to-rpm --scripts fortunes-ru_1.52-2_all.deb
 
