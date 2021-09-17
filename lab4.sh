@@ -22,3 +22,14 @@ yum list installed > lab4/task3.log
 yum deplist gcc > lab4/task4_1.log
 yum provides libgcc > lab4/task4_2.log
 
+#5
+mkdir -p $HOME/localrepo
+yum install createrepo yum-utils
+createrepo -v $HOME/localrepo
+nano /etc/yum.repos.d/localrepo.repo
+  [localrepo]
+  name=localrepo
+  baseurl=file://root/localrepo/
+  enabled=1
+  gpgcheck=0
+
