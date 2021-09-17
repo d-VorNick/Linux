@@ -64,3 +64,23 @@ yum install /root/rpmbuild/RPMS/noarch/fortunes-ru-1.52-3.noarch.rpm
 yum remove nano
 C:\Users\vniki\Downloads\nano-2.9.8-1.el8.x86_64.rpm  root@192.168.0.110:/root/
 
+dnf install perl-Text-Unidecode
+dnf install perl-libintl-perl
+pscp C:\Users\vniki\Downloads\perl-Unicode-EastAsianWidth-1.33-13.el8.noarch.rpm root@192.168.0.110:/root
+su -c 'rpm -Uvh perl-Unicode-EastAsianWidth-1.33-13.el8.noarch.rpm'
+pscp C:\Users\vniki\Downloads\file-devel-5.33-16.el8_3.1.i686.rpm root@192.168.0.110:/root
+pscp C:\Users\vniki\Downloads\texinfo-6.5-6.el8.x86_64.rpm root@192.168.0.110:/root
+su -c 'rpm -Uvh texinfo-6.5-6.el8.x86_64.rpm'
+su -c 'rpm -Uvh file-devel-5.33-16.el8_3.1.i686.rpm'
+yumdownloader --source nano
+rpm -iv nano___.rpm # тут версия соответствующая 
+cd rpmbuild/SPECS
+vim nano.spec # сюда надо добавить стркоу ln -s "nano" "%{buildroot}/%{_bindir}/newnano"
+rpmbuild -bb nano.spec 
+yum localinstall nano___.rpm
+
+
+
+
+
+
