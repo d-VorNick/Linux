@@ -61,5 +61,6 @@ rpmrebuild -pe fortunes-ru-1.52-3.noarch.rpm
 yum install /root/rpmbuild/RPMS/noarch/fortunes-ru-1.52-3.noarch.rpm
 
 #9
-
+yum remove nano
+C:\Users\vniki\Downloads\nano-2.9.8-1.el8.x86_64.rpm  root@192.168.0.110:/root/
 
