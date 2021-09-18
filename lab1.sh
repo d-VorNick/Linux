@@ -42,6 +42,7 @@ ln -s $HOME/test/list $HOME/test/links/list_slink
 
 #7 ------------------------------------------------------
 
+echo "Задание 7: "
 a=$(stat --format=%h $HOME/test/links/list_hlink)
 echo "Кол-во жестких ссылок файла list_hlink"
 echo $a
