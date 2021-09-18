@@ -73,12 +73,23 @@ pscp C:\Users\vniki\Downloads\texinfo-6.5-6.el8.x86_64.rpm root@192.168.0.110:/r
 su -c 'rpm -Uvh texinfo-6.5-6.el8.x86_64.rpm'
 su -c 'rpm -Uvh file-devel-5.33-16.el8_3.1.i686.rpm'
 yumdownloader --source nano
-rpm -iv nano___.rpm # тут версия соответствующая 
+rpm -iv nano-2.9.8-1.el8.x86_64.rpm
 cd rpmbuild/SPECS
-vim nano.spec # сюда надо добавить стркоу ln -s "nano" "%{buildroot}/%{_bindir}/newnano"
+vim nano.spec 
+     # сюда надо добавить строки ln -s "nano" "/usr/bin/newnano"
+     rm -f /usr/bin/newnano
 rpmbuild -bb nano.spec 
-yum localinstall nano___.rpm
+cd $HOME/rpmbuild/RPMS
+yum localinstall nano-2.9.8-1.el8.x86_64.rpm
 
+# ДРУГОЙ СПОСОБ
+
+rpmrebuild -pe nano-2.9.8-1.el8.x86_64.rpm
+    #меняем Name на newnano
+    ln -s "nano" "/usr/bin/newnano"
+    rm -f /usr/bin/newnano
+cd /root/rpmbuild/RPMS/x86_64
+yum localinstall newnano-2.9.8-1.el8.x86_64.rpm
 
 
 
