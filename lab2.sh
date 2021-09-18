@@ -90,4 +90,4 @@ mount.cifs \\\\Ip\\lab2 /mnt/share -o user=vnikita2000@gmail.com password=******
 
 #16
 nano /etc/fstab
-\\\\192.168.0.106\\lab2 /mnt/share cifs user=vnikita2000@gmail.com, password=Kbpf2006, rw, iocharset=utf8 0 0
+\\\\192.168.0.106\\lab2 /mnt/share cifs user=vnikita2000@gmail.com, password=*******, rw, iocharset=utf8 0 0
