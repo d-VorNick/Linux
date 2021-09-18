@@ -72,6 +72,8 @@ pscp C:\Users\vniki\Downloads\file-devel-5.33-16.el8_3.1.i686.rpm root@192.168.0
 pscp C:\Users\vniki\Downloads\texinfo-6.5-6.el8.x86_64.rpm root@192.168.0.110:/root
 su -c 'rpm -Uvh texinfo-6.5-6.el8.x86_64.rpm'
 su -c 'rpm -Uvh file-devel-5.33-16.el8_3.1.i686.rpm'
+
+yum remove nano
 yumdownloader --source nano
 rpm -iv nano-2.9.8-1.el8.x86_64.rpm
 cd rpmbuild/SPECS
