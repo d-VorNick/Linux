@@ -38,6 +38,13 @@ df -h
 fsck -n /dev/sda3
 
 #12
+fdisk /dev/sda
+n
+p
+4
+Default
++12Mib
+w 
 mkfs.ext4 /dev/sda4
 umount /dev/sda3
 mke2fs -O journal_dev /dev/sda4
