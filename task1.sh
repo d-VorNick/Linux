@@ -15,3 +15,4 @@ while IFS= read -r line; do
         echo "$line"
     fi
 done < tmp.txt
+rm -f tmp.txt 
