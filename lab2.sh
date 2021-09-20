@@ -11,7 +11,7 @@ mkfs.ext4 -b 4096 /dev/sda3
 dumpe2fs -h /dev/sda3
 
 #5
-tune2fs -i 2m -C 2 /dev/sda3
+tune2fs -i 2m -c 2 /dev/sda3
 
 #6
 mkdir /mnt/newdisk
