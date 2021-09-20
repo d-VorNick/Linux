@@ -102,4 +102,21 @@ yum localinstall newnano-2.9.8-1.el8.x86_64.rpm
 
 
 
+desktop-file-utils >= 0.2.93 is needed by vim-2:8.0.1763-15.el8.x86_64
+        gpm-devel is needed by vim-2:8.0.1763-15.el8.x86_64
+        gtk3-devel is needed by vim-2:8.0.1763-15.el8.x86_64
+        libICE-devel is needed by vim-2:8.0.1763-15.el8.x86_64
+        libSM-devel is needed by vim-2:8.0.1763-15.el8.x86_64
+        libX11-devel is needed by vim-2:8.0.1763-15.el8.x86_64
+        libXpm-devel is needed by vim-2:8.0.1763-15.el8.x86_64
+        libXt-devel is needed by vim-2:8.0.1763-15.el8.x86_64
+        libacl-devel is needed by vim-2:8.0.1763-15.el8.x86_64
+        libappstream-glib is needed by vim-2:8.0.1763-15.el8.x86_64
+        libselinux-devel is needed by vim-2:8.0.1763-15.el8.x86_64
+        lua-devel is needed by vim-2:8.0.1763-15.el8.x86_64
+        python2-devel is needed by vim-2:8.0.1763-15.el8.x86_64
+        python3-devel is needed by vim-2:8.0.1763-15.el8.x86_64
+        ruby is needed by vim-2:8.0.1763-15.el8.x86_64
+        ruby-devel is needed by vim-2:8.0.1763-15.el8.x86_64
+[root@localhost SPECS]# yum install desktop-file-utils
 
