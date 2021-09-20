@@ -9,6 +9,6 @@ perl -e 'print crypt($ARGV[0], "password")' 123
 echo "u4:paN8aiEIonqJE:18884:0:99999:7:::" >> /etc/shadow
 
 chown -R u4 .
-chmod -R go=u,go-w
+chmod -R go=u,go-w .
 chmod -R go=u,go-w .
 chmod go= .
