@@ -8,6 +8,13 @@ tar -xzvf bastet-0.43.tgz
 sudo yum install boost-devel
 sudo yum install ncurses-devel
 cd $HOME/bastet
+make
+nano Makefile
+  install:
+          cp ./bastet /usr/bin
+make install
+
+
 cp bastet /usr/local/bin
 chgrp games /usr/local/bin/bastet
 chmod g+s /usr/local/bin/bastet
